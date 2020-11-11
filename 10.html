@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+header('Content-type:text/json;charset=utf-8;');
+date_default_timezone_set("PRC");
+$url="https://acg.xydwz.cn/P站/P站随机图片.php";
+$type = $_GET['type'];
+if($type=="json"){
+$result = file_get_contents($url."?return=json");
+echo $result;
+}
+else{
+header("Location:".$url);
+}
+?>
+
+</body>
+</html>
